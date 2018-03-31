@@ -67,7 +67,11 @@ class VoyagerCompassController extends Controller
             $args = (isset($args)) ? ' '.$args : '';
 
             try {
-                $process = new Process('cd '.base_path().' && php artisan '.$command.$args);
+                $process = new Process(
+                    'cd '.base_path().' && php artisan '.$command.$args,
+                    null,
+                    ['PATH' => config('voyager.compass.additionnal_path', '/nothing') . ':' . getenv('PATH') ]
+                );
                 $process->run();
 
                 if (!$process->isSuccessful()) {

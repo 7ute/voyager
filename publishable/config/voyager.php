@@ -218,5 +218,20 @@ return [
          ],
          'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
      ],
+ 
+    /*
+    |--------------------------------------------------------------------------
+    | Compass Config
+    |--------------------------------------------------------------------------
+    |
+    | Here you can tweak Compass
+    |
+    */
+   
+    'compass' => [
+        // If your php is not in the default SERVER PATH, specificy the path here
+        // ie: '/usr/local/bin'
+        'additionnal_path' => env('COMPASS_ADDITIONNAL_PATH', ''),
+    ],
 
 ];
